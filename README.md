@@ -14,7 +14,7 @@ esp32-tft2.8-touch - some codes
 // For ESP32 Dev board (only tested with ILI9341 display)
 // The hardware SPI can be mapped to any pins
 
-(UNCOMENT HERE DOWN)
+------------> (UNCOMENT HERE DOWN  THIS LINES) <------------
 //#define TFT_MISO 19
 //#define TFT_MOSI 23
 //#define TFT_SCLK 18
