@@ -29,7 +29,7 @@ void loop() {
   } else {
     for (int i = 0; i < n; ++i) {
       // Vypočítanie Y pozície pre každý riadok
-      int yPosition = i * 40; // Výška jedného bloku textu
+      int yPosition = i * 60; // Výška jedného bloku textu
 
       // Zobrazenie SSID
       tft.setCursor(0, yPosition);
@@ -42,18 +42,26 @@ void loop() {
       tft.println(WiFi.BSSIDstr(i));
 
       // Zobrazenie kanála
+      int channel = WiFi.channel(i);
       tft.setCursor(0, yPosition + 20);
       tft.print("CH: ");
-      tft.println(WiFi.channel(i));
+      tft.println(channel);
+
+      // Zobrazenie frekvencie na základe kanála
+      float frequency = getWiFiFrequency(channel);
+      tft.setCursor(0, yPosition + 30);
+      tft.print("Frekvencia: ");
+      tft.print(frequency);
+      tft.println(" MHz");
 
       // Zobrazenie typu zabezpečenia
-      tft.setCursor(0, yPosition + 30);
+      tft.setCursor(0, yPosition + 40);
       tft.print("Security: ");
       String encryptionType = getEncryptionType(WiFi.encryptionType(i));
       tft.println(encryptionType);
 
       // Zobrazenie sily signálu
-      tft.setCursor(0, yPosition + 40);
+      tft.setCursor(0, yPosition + 50);
       tft.print("Sila: ");
       tft.print(WiFi.RSSI(i));
       tft.println(" dBm");
@@ -86,5 +94,18 @@ String getEncryptionType(int encryptionType) {
       return "WPA3_PSK";
     default:
       return "Other";
+  }
+}
+
+// Funkcia na prepočet WiFi kanálu na frekvenciu v MHz
+float getWiFiFrequency(int channel) {
+  if (channel >= 1 && channel <= 14) {
+    // 2,4 GHz pásmo
+    return 2407 + channel * 5; // Frekvencia sa počíta z 2407 MHz + (kanál * 5)
+  } else if (channel >= 32 && channel <= 177) {
+    // 5 GHz pásmo (bežné kanály medzi 36 a 165)
+    return 5000 + (channel * 5);
+  } else {
+    return 0; // Neplatný kanál
   }
 }
