@@ -1,7 +1,7 @@
 #include <TFT_eSPI.h>  // Knižnica pre ILI9341 s dotykovým ovládaním
 
 TFT_eSPI tft = TFT_eSPI();       // Inicializácia displeja
-uint16_t calData[5] = { 293, 3547, 243, 3592, 3 };  // Kalibračné údaje
+uint16_t calData[5] = { 185, 3452, 292, 3540, 1 };
 
 void setup() {
   Serial.begin(115200);          // Spustenie sériovej komunikácie pre ladenie
