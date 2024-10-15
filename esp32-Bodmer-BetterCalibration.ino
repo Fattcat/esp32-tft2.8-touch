@@ -1,5 +1,6 @@
 // VISIT THIS (or COPY code down here) : https://github.com/Bodmer/TFT_eSPI/blob/master/examples/Generic/Touch_calibrate/Touch_calibrate.ino
-// Then Upload code to your esp32 or any arduino device
+// Then Upload code to your esp32 or any arduino device (! BUT MAKE SURE YOU HAVE RIGHT PIN CONNECTION ! and correctly setup "User_Setup.h")
+// : INFO : --> U can Check also this : https://forum.arduino.cc/t/ili9341-new-spi-library-for-due-supporting-dma-transfer-uno-mega-compatible/256672
 
 // ----- code IS HERE DOWN ------
 
