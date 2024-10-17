@@ -41,4 +41,29 @@ esp32-tft2.8-touch - some codes
 - T_CS -> 
 - T_DIN -> 
 - T_DO -> 
-- T_IRQ -> 
+- T_IRQ ->
+
+
+# for Rpi4 TFT Display connection
+| TFT Module | ESP32 Board |
+|------------|-------------|
+| TFT 5V     | 5V          |
+| TFT GND    | GND         |
+| TFT MISO   | Pin 19      |
+| TFT MOSI   | Pin 23      |
+| TFT SCK    | Pin 18      |
+| TFT CS     | Pin 16      |
+| TFT DC     | Pin 2       |
+| TFT RST    | Pin 4       |
+| TFT T_CS   | Pin 21      |
+
+### SD Card Module
+
+| SD Card module | ESP32 Board          |
+|----------------|----------------------|
+| SD 3v3         | 3V3                  |
+| SD GND         | GND                  |
+| SD CS          | Pin 15               |
+| SD SCK (clk)   | Pin 18 (same as TFT) |
+| SD MOSI        | Pin 23 (same as TFT) |
+| SD MISO        | Pin 19 (same as TFT) |
