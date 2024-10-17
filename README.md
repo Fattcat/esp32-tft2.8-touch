@@ -30,21 +30,21 @@ esp32-tft2.8-touch - some codes
 - VCC -> 3.3V
 - GND -> GND
 - CS -> D15
-- RST -> D
+- RST -> D4
 - DC -> D2
 - MOSI -> D23
 - LED -> 3.3V
 - SCK -> D18
 - MISO -> 19
 ## For TOUCH Function
-- T_CLK -> 
-- T_CS -> 
-- T_DIN -> 
-- T_DO -> 
-- T_IRQ ->
+- T_CLK -> D18
+- T_CS -> D21
+- T_DIN -> D
+- T_DO -> D
+- T_IRQ -> D
 
 
-# for Rpi4 TFT Display connection
+# Connection for Rpi4 TFT Display connection
 | TFT Module | ESP32 Board |
 |------------|-------------|
 | TFT 5V     | 5V          |
