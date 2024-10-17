@@ -25,8 +25,8 @@ esp32-tft2.8-touch - some codes
 #define TOUCH_CS 21     // Chip select pin (T_CS) of touch screen
 ```
 
-# Conection
-## TFT -> esp32
+# Conection for TFT 2.8 ILI9341 
+## TFT 2.8 ILI9341 -> esp32
 - VCC -> 3.3V
 - GND -> GND
 - CS -> D15
@@ -45,17 +45,17 @@ esp32-tft2.8-touch - some codes
 
 
 # Connection for Rpi4 TFT Display connection
-| TFT Module | ESP32 Board |
+| RPi4 Display| ESP32 Board |
 |------------|-------------|
-| TFT 5V     | 5V          |
-| TFT GND    | GND         |
-| TFT MISO   | Pin 19      |
-| TFT MOSI   | Pin 23      |
-| TFT SCK    | Pin 18      |
-| TFT CS     | Pin 16      |
-| TFT DC     | Pin 2       |
-| TFT RST    | Pin 4       |
-| TFT T_CS   | Pin 21      |
+| TFT 5V     | 5V        |
+| TFT GND    | GND       |
+| TFT MISO   | Pin 19    |
+| TFT MOSI   | Pin 23    |
+| TFT SCK    | Pin 18    |
+| TFT CS     | Pin 16    |
+| TFT DC     | Pin 2     |
+| TFT RST    | Pin 4     |
+| TFT T_CS   | Pin 21    |
 
 ### SD Card Module
 
