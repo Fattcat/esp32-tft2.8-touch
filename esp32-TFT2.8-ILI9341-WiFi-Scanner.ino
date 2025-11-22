@@ -31,37 +31,40 @@ void loop() {
       // Vypočítanie Y pozície pre každý riadok
       int yPosition = i * 60; // Výška jedného bloku textu
 
-      // Zobrazenie SSID
       tft.setCursor(0, yPosition);
+      tft.print("--------------------------------");
+
+      // Zobrazenie SSID
+      tft.setCursor(0, yPosition + 10);
       tft.print("SSID: ");
       tft.println(WiFi.SSID(i));
 
       // Zobrazenie MAC adresy
-      tft.setCursor(0, yPosition + 10);
+      tft.setCursor(0, yPosition + 20);
       tft.print("MAC: ");
       tft.println(WiFi.BSSIDstr(i));
 
       // Zobrazenie kanála
       int channel = WiFi.channel(i);
-      tft.setCursor(0, yPosition + 20);
+      tft.setCursor(0, yPosition + 30);
       tft.print("CH: ");
       tft.println(channel);
 
       // Zobrazenie frekvencie na základe kanála
       float frequency = getWiFiFrequency(channel);
-      tft.setCursor(0, yPosition + 30);
+      tft.setCursor(0, yPosition + 40);
       tft.print("Frekvencia: ");
       tft.print(frequency);
       tft.println(" MHz");
 
       // Zobrazenie typu zabezpečenia
-      tft.setCursor(0, yPosition + 40);
+      tft.setCursor(0, yPosition + 50);
       tft.print("Security: ");
       String encryptionType = getEncryptionType(WiFi.encryptionType(i));
       tft.println(encryptionType);
 
       // Zobrazenie sily signálu
-      tft.setCursor(0, yPosition + 50);
+      tft.setCursor(0, yPosition + 60);
       tft.print("Sila: ");
       tft.print(WiFi.RSSI(i));
       tft.println(" dBm");
